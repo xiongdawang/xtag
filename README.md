@@ -12,6 +12,7 @@
 
 ### 示例
     这里有一个很棒的<x-click>组件，帮助您了解使用X-Tag创建Web组件的方式。正如您所看到的，有一个 tap 事件附加到元素上，让您开始和停止时间.
+
     xtag.register('x-clock', {
       lifecycle: {
         created: function(){
