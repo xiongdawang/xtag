@@ -12,33 +12,37 @@ X-Tag 是一个微软支持的开源的 JavaScript 库, 它包装了 W3C 标准 
 
 ### 示例
 这里有一个很棒的<x-click>组件，帮助您了解使用X-Tag创建Web组件的方式。正如您所看到的，有一个 tap 事件附加到元素上，让您开始和停止时间.
-
-    xtag.register('x-clock', {
-      lifecycle: {
-        created: function(){
-          this.start();
-        }
-      },
-      methods: {
-        start: function(){
-          this.update();
-          this.xtag.interval = setInterval(this.update.bind(this), 1000);
-        },
-        stop: function(){
-          this.xtag.interval = clearInterval(this.xtag.interval);
-        },
-        update: function(){
-          this.textContent = new Date().toLocaleTimeString();
-        }
-      },
-      events: {
-        tap: function(){
-          if (this.xtag.interval) this.stop();
-          else this.start();
-        }
-      }
-    });
-
+```js
+xtag.register('x-clock', {
+  lifecycle: {
+    created: function(){
+      this.start();
+    }
+  },
+  methods: {
+    start: function(){
+      this.update();
+      this.xtag.interval = setInterval(this.update.bind(this), 1000);
+    },
+    stop: function(){
+      this.xtag.interval = clearInterval(this.xtag.interval);
+    },
+    update: function(){
+      this.textContent = new Date().toLocaleTimeString();
+    }
+  },
+  events: {
+    tap: function(){
+      if (this.xtag.interval) this.stop();
+      else this.start();
+    }
+  }
+});
+```
+    
 ### 相关文档
-    http://x-tag.github.io/ 
-    https://x-tag.readme.io/ 
+
+[http://x-tag.github.io/](http://x-tag.github.io/)
+
+[https://x-tag.readme.io/](https://x-tag.readme.io/)
+    
